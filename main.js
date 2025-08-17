@@ -58,9 +58,15 @@ swapSign.addEventListener('click', (event) => {
 percent.addEventListener('click', (event) => {
   if (operator === undefined) {
     lhs = Number(lhs) / 100;
+    if (isFloat(lhs)) {
+      lhsDecimal = true;
+    }
   }
   else {
     rhs = Number(rhs) / 100;
+    if (isFloat(rhs)) {
+      rhsDecimal = true;
+    }
   }
 
   updateDisplay(label);
@@ -76,6 +82,10 @@ equal.addEventListener('click', (event) => {
 
     if (result < 0) {
       lhsNegative = true;
+    }
+
+    if (isFloat(result)) {
+      lhsDecimal = true;
     }
 
     lhs = result;

@@ -1,23 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Nothing+You+Could+Do&family=Noto+Sans+Duployan:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 html,
 body {
   height: 100vh;
   margin: 0;
+  background-color: var(--background-dark);
+}
+
+* {
+  font-family: "Nothing You Could Do", cursive;
+}
+
+:root {
+  --primary: #929407;
+  --on-primary: #ffffff;
+  --primary-container: #e5e6a1;
+  --on-primary-container: #323303;
+  --secondary: #284047;
+  --on-secondary: #ffffff;
+  --secondary-container: #c6dee6;
+  --on-secondary-container: #1d2e33;
+  --tertiary: #da2461;
+  --on-tertiary: #ffffff;
+  --tertiary-container: #e6a9bd;
+  --on-tertiary-container: #330916;
+  --error: #211eb3;
+  --on-error: #ffffff;
+  --error-container: #aaa9e6;
+  --on-error-container: #090933;
+  --background: #fcfcfb;
+  --on-background: #333331;
+  --surface: #fcfcfb;
+  --on-surface: #333331;
+  --surface-variant: #e5e6d8;
+  --on-surface-variant: #666653;
+  --outline: #99997c;
+  --primary-dark: #e4e684;
+  --on-primary-dark: #4c4c04;
+  --primary-container-dark: #656605;
+  --on-primary-container-dark: #e5e6a1;
+  --secondary-dark: #b8dbe6;
+  --on-secondary-dark: #2b454c;
+  --secondary-container-dark: #395c66;
+  --on-secondary-container-dark: #c6dee6;
+  --tertiary-dark: #e690ac;
+  --on-tertiary-dark: #4c0d22;
+  --tertiary-container-dark: #66112d;
+  --on-tertiary-container-dark: #e6a9bd;
+  --error-dark: #9190e6;
+  --on-error-dark: #0e0d4c;
+  --error-container-dark: #121166;
+  --on-error-container-dark: #aaa9e6;
+  --background-dark: #333331;
+  --on-background-dark: #e5e6e2;
+  --surface-dark: #333331;
+  --on-surface-dark: #e5e6e2;
+  --surface-variant-dark: #666653;
+  --on-surface-variant-dark: #e5e6d2;
+  --outline-dark: #b2b39d;
 }
 
 label {
+  display: flex;
   font-size: 100px;
   text-wrap: wrap;
-  /* flex: 1; */
+  height: 400px;
+  margin-bottom: auto;
+  margin-top: 40px;
+  align-items: center;
+  flex: 1;
+  min-width: 100%;
+  justify-content: center;
+  color: var(--on-primary);
 }
 
 button {
-  font-size: 32px;
+  font-size: 48px;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background-color: var(--secondary-container);
+  color: var(--on-secondary-container);
+}
+
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
 
   align-items: center;
   gap: 10px;
