@@ -3,3 +3,24 @@ body {
   height: 100vh;
   margin: 0;
 }
+
+label {
+  font-size: 100px;
+  text-wrap: wrap;
+  /* flex: 1; */
+}
+
+button {
+  font-size: 32px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  align-items: center;
+  gap: 10px;
+
+  flex-wrap: wrap;
+}
