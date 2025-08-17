@@ -9,7 +9,7 @@ const clearBtn = document.querySelector('.clear');
 const signs = document.querySelectorAll(".sign");
 const dotBtn = document.querySelector(".dot");
 
-dot.addEventListener('click', () => {
+dotBtn.addEventListener('click', () => {
 
 })
 
