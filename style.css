@@ -81,8 +81,8 @@ button {
   border-radius: 50%;
   background-color: var(--secondary-container);
   color: var(--on-secondary-container);
+  border-width: 0;
 }
-
 
 .btn-container {
   display: flex;

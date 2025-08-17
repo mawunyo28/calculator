@@ -31,6 +31,7 @@ dotBtn.addEventListener('click', () => {
     rhs = rhs.toString() + '.';
   }
 
+
   updateDisplay(label);
 });
 
