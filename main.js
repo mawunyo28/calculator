@@ -2,6 +2,8 @@
 let lhs = 0;
 let rhs = 0;
 let operator = undefined;
+let lhsDecimal = false;
+let rhsDecimal = false;
 
 const buttons = document.querySelectorAll(".num");
 const label = document.querySelector("label");
@@ -9,8 +11,22 @@ const clearBtn = document.querySelector('.clear');
 const signs = document.querySelectorAll(".sign");
 const dotBtn = document.querySelector(".dot");
 
-dotBtn.addEventListener('click', () => {
+function isFloat(n) {
+  return Number(n) === n && !Number.isInteger(n);
+}
 
+dotBtn.addEventListener('click', () => {
+  // we are still inputing the lhs
+  if (operator === undefined && !lhsDecimal) {
+    lhsDecimal = true;
+    lhs = lhs.toString() + '.';
+  }
+  else if (operator !== undefined && !rhsDecimal) {
+    rhsDecimal = true;
+    rhs = rhs.toString() + '.';
+  }
+
+  updateDisplay(label);
 })
 
 
@@ -68,6 +84,8 @@ function clearDisplay(display) {
   lhs = 0;
   rhs = 0;
   operator = undefined;
+  lhsDecimal = false;
+  rhsDecimal = false;
   updateDisplay(display);
 }
 
@@ -77,10 +95,23 @@ buttons.forEach((btn) => {
   if (Number.isInteger(num)) {
     btn.addEventListener('click', () => {
       if (operator === undefined) {
-        lhs = lhs * 10 + num;
+        if (lhsDecimal) {
+          lhs = lhs.toString() + num;
+          lhs = lhs.toString();
+        }
+        else {
+
+          lhs = lhs * 10 + num;
+        }
       }
       else if (operator != undefined) {
-        rhs = rhs * 10 + num;
+        if (rhsDecimal) {
+          rhs = rhs.toString() + num;
+          rhs = rhs.toString();
+        }
+        else {
+          rhs = rhs * 10 + num;
+        }
       }
 
       updateDisplay(label);
